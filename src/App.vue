@@ -1,10 +1,13 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <v-app-bar>
+      <v-toolbar-title>Encounter-Tavern</v-toolbar-title>
+    </v-app-bar>
+    <router-view>
+    </router-view>
+    <v-footer app>
+      <span>&copy; {{ new Date().getFullYear() }}</span>
+    </v-footer>
   </div>
 </template>
 
