@@ -13,10 +13,18 @@
           </v-list-item>
           <v-list-item link>
             <v-list-item-action>
-              <v-icon>mdi-view-dashboard</v-icon>
+              <v-icon>mdi-dice-multiple</v-icon>
             </v-list-item-action>
             <v-list-item-content>
               <v-list-item-title>My Encounters</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+          <v-list-item to="/" link>
+            <v-list-item-action>
+              <v-icon>mdi-calculator</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title>Generator</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
           <v-list-item link>
@@ -44,6 +52,7 @@
 </template>
 
 <script>
+
 export default {
   data() {
     return {
