@@ -82,13 +82,13 @@ export default {
           difficulty: this.difficulty,
           players: this.players,
         })
-        .then((response) => console.log(response));
+        .then((response) => {
+            if(response.status === 200){
+                const id = response.data;
+                this.$router.push({ name: 'Encounter', params: { id } })
+            }
+        });
     },
   },
 };
 </script>
-
-<style scoped>
-.encounterGenerator {
-}
-</style>
