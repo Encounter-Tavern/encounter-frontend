@@ -1,13 +1,9 @@
 <template>
 <div>
     <h1>Inititive</h1>
-    <v-list rounded v-for="(entity, index) in entities" :key="index">
-        <v-list-item>
-            <v-list-item-content>
-                <InitiativeListElement :entity="entity" />
-            </v-list-item-content>
-        </v-list-item>
-    </v-list>
+    <v-layout rounded v-for="(entity, index) in entities" :key="index">
+        <InitiativeListElement :entity="entity" :index="index" />
+    </v-layout>
 </div>
 </template>
 
