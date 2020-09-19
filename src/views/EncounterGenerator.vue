@@ -16,12 +16,14 @@
                 <PlayerPopup @addPlayer="addPlayerToList($event.name, $event.level)"/>
             </v-row>
             <v-row>
-                <v-col v-for="player in players" :key="player.name">
-                    <Player :name="player.name" :level="player.level" />
-                </v-col>
+                <v-chip-group v-for="(player, index) in players" :key="player.name">
+                    <v-chip close @click:close="removePlayerFromList(index)" color="blue">
+                        {{player.name}} Level: {{player.level}}
+                    </v-chip>
+                </v-chip-group>
             </v-row>
             <v-row>
-                <v-btn color="success">Generate</v-btn>
+                <v-btn @click="createEncounter()" color="success">Generate</v-btn>
             </v-row>
         </v-container>
   </div>
@@ -29,13 +31,11 @@
 
 <script>
 import PlayerPopup from '../components/PlayerPopup';
-import Player from '../components/Player';
 
 export default {
   name: 'EncounterGenerator',
   components: {
-      PlayerPopup,
-      Player
+      PlayerPopup
   },
   data() {
       return {
@@ -45,12 +45,17 @@ export default {
   },
   methods: {
       addPlayerToList(name, level){
-        console.log("addToList");
         console.log(name);
         this.players.push({
             "name": name,
             "level": level
         });
+      },
+      removePlayerFromList(index){
+        this.players.splice(index, 1);
+      },
+      createEncounter(){
+        console.log("TODO");
       }
   }
 }

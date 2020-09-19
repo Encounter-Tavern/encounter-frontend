@@ -51,7 +51,6 @@ export default {
     methods: {
         addPlayer(){
             this.dialog = false;
-            console.log("addPlayer");
             this.$emit('addPlayer', {
                 "name": this.name,
                 "level": this.playerLevel
