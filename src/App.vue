@@ -1,13 +1,11 @@
 <template>
   <div id="app">
-    <v-app-bar>
-      <v-toolbar-title>Encounter-Tavern</v-toolbar-title>
-    </v-app-bar>
-    <router-view>
-    </router-view>
-    <v-footer app>
-      <span>&copy; {{ new Date().getFullYear() }}</span>
-    </v-footer>
+    <v-app>
+      <router-view/>
+      <v-footer app>
+        <span>&copy; {{ new Date().getFullYear() }}</span>
+      </v-footer>
+    </v-app>
   </div>
 </template>
 
