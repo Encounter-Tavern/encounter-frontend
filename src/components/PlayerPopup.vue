@@ -14,8 +14,8 @@
 
             <div class="cardForm">
                 <v-form>
-                    <v-text-field v-model="name" label="Player Name" :clearable="true" hint="Enter the name of this player" placeholder="Zork the Ork"/>
-                    <v-slider v-model="level" label="Level" :min="1" :max="20" hint="Enter the level of this player"/>
+                    <v-text-field v-model="name" label="Player Name" :rules="rules" :clearable="true" hint="Enter the name of this player" placeholder="Zork the Ork"/>
+                    <v-slider v-model="playerLevel" label="Level" :min="1" :max="20" hint="Enter the level of this player" thumb-label="playerLevel"/>
                 </v-form>
             </div>
             <v-divider></v-divider>
@@ -37,12 +37,16 @@ export default {
     name: 'PlayerPopup',
     data () {
       return {
-        dialog: false
+        dialog: false,
+        rules: [
+            value => !!value || 'Required',
+            value => (value || '').length <= 20 || 'Max 20 characters'
+        ]
       }
     },
     props: {
         name: String,
-        level: Number
+        playerLevel: Number
     },
     methods: {
         addPlayer(){
@@ -50,7 +54,7 @@ export default {
             console.log("addPlayer");
             this.$emit('addPlayer', {
                 "name": this.name,
-                "level": this.level
+                "level": this.playerLevel
             });
         }
     }
