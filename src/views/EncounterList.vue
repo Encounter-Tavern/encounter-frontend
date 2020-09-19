@@ -24,7 +24,7 @@ export default {
   },
   methods: {
     getData() {
-      this.$http.get("http://localhost:8081/encounters/").then((response) => {
+      this.$http.get(this.$url + "/encounters/").then((response) => {
         console.log(response);
         this.encounters = response.data;
       });

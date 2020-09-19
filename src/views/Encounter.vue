@@ -30,14 +30,14 @@ export default {
     },
     created() {
         this.$http
-            .get("http://localhost:8081/encounters/" + this.$route.params.id)
+            .get(this.$url + "/encounters/" + this.$route.params.id)
             .then((response) => {
                 this.encounter = response.data;
             });
     },
     methods: {
         save() {
-            this.$http.put("http://localhost:8081/encounters/" + this.$route.params.id, this.encounter)
+            this.$http.put(this.$url + "/encounters/" + this.$route.params.id, this.encounter)
                 .then((response) => {
                     console.log(response)
                 })

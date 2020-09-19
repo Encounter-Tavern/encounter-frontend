@@ -66,7 +66,7 @@ export default {
         },
         createEncounter() {
             this.$http
-                .post("http://localhost:8081/encounters/generate", {
+                .post(this.$url +"/encounters/generate", {
                     name: this.name,
                     difficulty: this.difficulty,
                     players: this.players,
