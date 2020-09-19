@@ -16,9 +16,9 @@
                     <b>Aligment:</b> {{this.aligment}} <br>
                 </p>
                 <h3>Languages</h3>
-                <p v-if="languages.length > 0">This creature can communicate in the following languages:
+                <p v-if="languageArray.length > 0">This creature can communicate in the following languages:
                     <ul>
-                        <li v-for="language in languages" :key="language">
+                        <li v-for="language in languageArray" :key="language">
                             {{language}}
                         </li>
                     </ul>
@@ -77,10 +77,10 @@
 export default {
     name: 'MonsterInfoPopup',
     props: {
-            languages: [],
-            vulnerabilities: [],
-            resistances: [],
-            immunities: [],
+            languages: String,
+            vulnerabilities: Array,
+            resistances: Array,
+            immunities: Array,
             aligment: String,
             name: String,
             race: String
@@ -88,6 +88,14 @@ export default {
     data () {
         return {
             dialog: false
+        }
+    },
+    computed: {
+        languageArray: function(){
+            if(this.languages === ''){
+                return [];
+            }
+            return this.languages.split(',');
         }
     }
 }

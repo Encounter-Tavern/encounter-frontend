@@ -65,9 +65,9 @@
           <v-col>
             <MonsterInfoPopup
                 :languages="monster.languages"
-                :vulnerabilities="monster.vulnerabilities"
-                :resistances="monster.resistances"
-                :immunities="monster.immunities"
+                :vulnerabilities="monster.damage_vulnerabilities"
+                :resistances="monster.damage_resistances"
+                :immunities="monster.damage_immunities"
                 :aligment="monster.aligment"
                 :name="monster.name"
                 :race="monster.type"
@@ -114,6 +114,9 @@ export default {
     MonsterStatsPopup,
     MonsterActionsPopup,
   },
+  props: {
+    monster: Object
+  },
   data() {
     return {
       hover: false,
@@ -127,24 +130,7 @@ export default {
         wisdom: mdiScript,
         constitution: mdiAccount,
         dexterity: mdiHandRight,
-      },
-      monster: {
-        name: "Boblin",
-        type: "Goblin",
-        aligment: "Evil",
-        hitPoints: 12,
-        armorClass: 15,
-        strength: 12,
-        dexterity: 16,
-        constitution: 14,
-        intelligence: 8,
-        wisdom: 10,
-        charisma: 5,
-        languages: [],
-        vulnerabilities: [],
-        resistances: [],
-        immunities: [],
-      },
+      }
     };
   },
   methods: {
