@@ -2,9 +2,11 @@
   <div class="pa-3">
     <v-container>
       <h1>Encounters</h1>
-      <div v-for="(encounter) in encounters" :key="encounter.id">
-        <EncounterListElement :name="encounter.name" :id="encounter.id"/>
-      </div>
+      <v-row v-for="(encounter) in encounters" :key="encounter.id">
+        <v-col>
+         <EncounterListElement :name="encounter.name" :id="encounter.id"/>
+        </v-col>
+      </v-row>
     </v-container>
   </div>
 </template>
