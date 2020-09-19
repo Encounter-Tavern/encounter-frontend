@@ -16,7 +16,6 @@
                 :damage="action.damage"
                 :attackBonus="action.attack_bonus"
               />
-              <v-btn>Execute Action</v-btn>
             </v-col>
           </v-row>
           <v-row>
@@ -41,35 +40,12 @@ export default {
   components: {
     MonsterAction,
   },
+  props: {
+    actions: Array
+  },
   data() {
     return {
-      dialog: false,
-      actions: [
-        {
-          name: "Bite",
-          desc:
-            "Melee Weapon Attack: +11 to hit, reach 10 ft., one target. Hit: 17 (2d10 + 6) piercing damage plus 4 (1d8) acid damage.",
-          attack_bonus: 11,
-          damage: [
-            {
-              damage_type: {
-                index: "piercing",
-                name: "Piercing",
-                url: "/api/damage-types/piercing",
-              },
-              damage_dice: "2d10+6",
-            },
-            {
-              damage_type: {
-                index: "acid",
-                name: "Acid",
-                url: "/api/damage-types/acid",
-              },
-              damage_dice: "1d8",
-            },
-          ],
-        },
-      ],
+      dialog: false
     };
   },
 };

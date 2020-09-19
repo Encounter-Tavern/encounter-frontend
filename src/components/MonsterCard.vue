@@ -26,7 +26,9 @@
             <div>
               <v-icon x-large color="green">{{this.icons.sword}}</v-icon>
             </div>
-            <MonsterActionsPopup />
+            <MonsterActionsPopup 
+              :actions="monster.actions"
+            />
           </v-col>
           <v-col>
             <div>

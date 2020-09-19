@@ -141,6 +141,7 @@ export default {
   },
   data() {
     return {
+      dialog: false,
       icons: {
         sword: mdiSword,
         shield: mdiShield,
