@@ -64,7 +64,7 @@
 
 
 <script>
-import { mdiHome, mdiSword, mdiShield, mdiHeart, mdiArmFlex, mdiBrain, mdiHandHeart, mdiScript, mdiAccount, mdiHandRight } from '@mdi/js';
+import { mdiSword, mdiShield, mdiHeart, mdiArmFlex, mdiBrain, mdiHandHeart, mdiScript, mdiAccount, mdiHandRight } from '@mdi/js';
 import MonsterInfoPopup from '../components/MonsterInfoPopup';
 import MonsterStatsPopup from '../components/MonsterStatsPopup';
 import MonsterActionsPopup from '../components/MonsterActionsPopup';
@@ -80,7 +80,6 @@ export default {
         return {
             "hover": false,
             icons: {
-                "home": mdiHome,
                 "sword": mdiSword,
                 "shield": mdiShield,
                 "heart": mdiHeart,

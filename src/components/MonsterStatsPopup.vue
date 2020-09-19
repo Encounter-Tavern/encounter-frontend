@@ -11,42 +11,42 @@
             <v-container>
                 <v-row>
                     <v-col>
-                        <v-text-field label="Hit Points" v-model="hitPoints" type="number"/>
+                        <v-text-field :prepend-icon="icons.heart" label="Hit Points" v-model="hitPoints" type="number"/>
                     </v-col>
                 </v-row>
                 <v-row>
                     <v-col>
-                        <v-text-field label="Armor Class" v-model="armorClass" type="number"/>
+                        <v-text-field :prepend-icon="icons.shield" label="Armor Class" v-model="armorClass" type="number"/>
                     </v-col>
                 </v-row>
                 <v-row>
                     <v-col>
-                        <v-text-field label="Strength" v-model="strength" type="number"/>
+                        <v-text-field :prepend-icon="icons.strength" label="Strength" v-model="strength" type="number"/>
                     </v-col>
                 </v-row>
                 <v-row>
                     <v-col>
-                        <v-text-field label="Dexterity" v-model="dexterity" type="number"/>
+                        <v-text-field :prepend-icon="icons.dexterity" label="Dexterity" v-model="dexterity" type="number"/>
                     </v-col>
                 </v-row>
                 <v-row>
                     <v-col>
-                        <v-text-field label="Constitution" v-model="constitution" type="number"/>
+                        <v-text-field :prepend-icon="icons.constitution" label="Constitution" v-model="constitution" type="number"/>
                     </v-col>
                 </v-row>
                 <v-row>
                     <v-col>
-                        <v-text-field label="Intelligence" v-model="intelligence" type="number"/>
+                        <v-text-field :prepend-icon="icons.intelligence" label="Intelligence" v-model="intelligence" type="number"/>
                     </v-col>
                 </v-row>
                 <v-row>
                     <v-col>
-                        <v-text-field label="Wisdom" v-model="wisdom" type="number"/>
+                        <v-text-field :prepend-icon="icons.wisdom" label="Wisdom" v-model="wisdom" type="number"/>
                     </v-col>
                 </v-row>
                 <v-row>
                     <v-col>
-                        <v-text-field label="Charisma" v-model="charisma" type="number"/>
+                        <v-text-field :prepend-icon="icons.charisma" label="Charisma" v-model="charisma" type="number"/>
                     </v-col>
                 </v-row>
             </v-container>
@@ -67,6 +67,8 @@
 
 
 <script>
+import { mdiSword, mdiShield, mdiHeart, mdiArmFlex, mdiBrain, mdiHandHeart, mdiScript, mdiAccount, mdiHandRight } from '@mdi/js';
+
 export default {
     name: 'MonsterStatsPopup',
     data (){
@@ -79,7 +81,18 @@ export default {
             "constitution": 14,
             "intelligence": 8,
             "wisdom": 10,
-            "charisma": 5 
+            "charisma": 5,
+            icons: {
+                "sword": mdiSword,
+                "shield": mdiShield,
+                "heart": mdiHeart,
+                "strength": mdiArmFlex,
+                "intelligence": mdiBrain,
+                "charisma": mdiHandHeart,
+                "wisdom": mdiScript,
+                "constitution": mdiAccount,
+                "dexterity": mdiHandRight
+            }
         }
     },
     methods: {
