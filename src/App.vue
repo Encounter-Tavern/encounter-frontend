@@ -11,7 +11,7 @@
               <v-list-item-title>My Account</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
-          <v-list-item link>
+          <v-list-item to="/encounters" link>
             <v-list-item-action>
               <v-icon>mdi-dice-multiple</v-icon>
             </v-list-item-action>
@@ -19,7 +19,7 @@
               <v-list-item-title>My Encounters</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
-          <v-list-item to="/" link>
+          <v-list-item to="/generator" link>
             <v-list-item-action>
               <v-icon>mdi-calculator</v-icon>
             </v-list-item-action>
