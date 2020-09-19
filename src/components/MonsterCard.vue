@@ -1,7 +1,7 @@
 <template>
 <v-card max-width="300px" class="pa-1" @mouseover="hover = true" @mouseleave="hover =false" :class="{active: hover}">
     <v-img class="white--text align-end" height="250px" src="@/assets/monster.jpeg">
-        <v-card-title>{{this.monster.name}}, the {{this.monster.type}}</v-card-title>
+        <v-card-title>{{this.monster.name}}, a {{this.monster.type}} creature </v-card-title>
     </v-img>
     <v-card-actions>
         <v-container>
