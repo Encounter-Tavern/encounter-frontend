@@ -1,6 +1,6 @@
 <template>
 <v-card max-width="300px" class="pa-1" @mouseover="hover = true" @mouseleave="hover =false" :class="{active: hover}">
-    <v-img class="white--text align-end" height="250px" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2F1.bp.blogspot.com%2F-fuNOp4TfVvU%2FTr1fc7OFMsI%2FAAAAAAAAAZc%2FOHSYSyx5DCY%2Fs1600%2FTANK%252BGoblin%252BTuf%252BGit.jpg&f=1&nofb=1">
+    <v-img class="white--text align-end" height="250px" src="@/assets/monster.jpeg">
         <v-card-title>{{this.monster.name}}, the {{this.monster.type}}</v-card-title>
     </v-img>
     <v-card-actions>

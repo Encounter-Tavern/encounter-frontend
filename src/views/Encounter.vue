@@ -11,12 +11,7 @@
             </div>
         </v-flex>
         <v-flex xs12 sm4 md3 xl2>
-            <h1>Initiative</h1>
-            <v-list runded>
-                <v-list-item>
-                    <v-list-item-content>Test</v-list-item-content>
-                </v-list-item>
-            </v-list>
+            <InitiativeList :entities="entities" />
         </v-flex>
     </v-layout>
 </div>
@@ -24,23 +19,32 @@
 
 <script>
 import MonsterCard from "../components/MonsterCard";
+import InitiativeList from "../components/Initiative/InitiativeList"
 
 export default {
     name: "Encounter",
     components: {
         MonsterCard,
+        InitiativeList,
     },
     data() {
         return {
             encounter: {},
+            entities: [],
         };
     },
     created() {
         this.$http
             .get("http://localhost:8081/encounters/" + this.$route.params.id)
             .then((response) => {
-                console.log(response.data);
                 this.encounter = response.data;
+
+                this.encounter.monsters.forEach(monster => {
+                    this.entities.push(monster.name)
+                })
+                this.encounter.players.forEach(player => {
+                    this.entities.push(player.name)
+                })
             });
     },
     methods: {
