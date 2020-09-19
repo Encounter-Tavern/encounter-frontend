@@ -56,7 +56,7 @@
                     <MonsterInfoPopup/>
                 </v-col>
                 <v-col>
-                    <MonsterStatsPopup/>
+                    <MonsterStatsPopup @statChanges="updateStats($event)"/>
                 </v-col>
             </v-row>
         </v-container>
@@ -103,6 +103,18 @@ export default {
                 "wisdom": 10,
                 "charisma": 5 
             }
+        }
+    },
+    methods: {
+        updateStats(input){
+            this.monster.hitPoints = input.hitPoints;
+            this.monster.armorClass = input.armorClass;
+            this.monster.strength = input.strength;
+            this.monster.dexterity = input.dexterity;
+            this.monster.constitution = input.constitution;
+            this.monster.intelligence = input.intelligence;
+            this.monster.wisdom = input.wisdom;
+            this.monster.charisma = input.charisma;
         }
     }
 }
