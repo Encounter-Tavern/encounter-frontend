@@ -8,6 +8,10 @@ Vue.use(VueRouter)
 
 const routes = [
   {
+    path: "/",
+    redirect: { name: 'Encounter-Generator' }
+  },
+  {
     path: "/generator",
     name: "Encounter-Generator",
     component: EncounterGenerator
