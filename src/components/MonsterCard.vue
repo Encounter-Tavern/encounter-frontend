@@ -7,7 +7,6 @@
         >
       <v-card-title>{{this.monster.name}}, the {{this.monster.type}}</v-card-title>
     </v-img>
-
     <v-card-actions>
         <v-container>
             <v-row>
@@ -54,10 +53,10 @@
             </v-row>
             <v-row>
                 <v-col>
-                    <v-btn x-small text>More Info</v-btn>
+                    <MonsterInfoPopup/>
                 </v-col>
                 <v-col>
-                    <v-btn x-small text>Change Stats</v-btn>
+                    <MonsterStatsPopup/>
                 </v-col>
             </v-row>
         </v-container>
@@ -68,9 +67,15 @@
 
 <script>
 import { mdiHome, mdiSword, mdiShield, mdiHeart, mdiArmFlex, mdiBrain, mdiHandHeart, mdiScript, mdiAccount, mdiHandRight } from '@mdi/js';
+import MonsterInfoPopup from '../components/MonsterInfoPopup';
+import MonsterStatsPopup from '../components/MonsterStatsPopup';
 
 export default {
     name: 'MonsterCard',
+    components: {
+        MonsterInfoPopup,
+        MonsterStatsPopup
+    },
     data() {
         return {
             "hover": false,
