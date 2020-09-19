@@ -63,7 +63,15 @@
         </v-row>
         <v-row>
           <v-col>
-            <MonsterInfoPopup/>
+            <MonsterInfoPopup
+                :languages="monster.languages"
+                :vulnerabilities="monster.vulnerabilities"
+                :resistances="monster.resistances"
+                :immunities="monster.immunities"
+                :aligment="monster.aligment"
+                :name="monster.name"
+                :race="monster.type"
+            />
           </v-col>
           <v-col>
             <MonsterStatsPopup @statChanges="updateStats($event)"
@@ -123,6 +131,7 @@ export default {
       monster: {
         name: "Boblin",
         type: "Goblin",
+        aligment: "Evil",
         hitPoints: 12,
         armorClass: 15,
         strength: 12,
@@ -131,6 +140,10 @@ export default {
         intelligence: 8,
         wisdom: 10,
         charisma: 5,
+        languages: [],
+        vulnerabilities: [],
+        resistances: [],
+        immunities: [],
       },
     };
   },

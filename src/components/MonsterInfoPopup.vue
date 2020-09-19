@@ -76,7 +76,7 @@
 <script>
 export default {
     name: 'MonsterInfoPopup',
-    /*props: {
+    props: {
             languages: [],
             vulnerabilities: [],
             resistances: [],
@@ -84,17 +84,10 @@ export default {
             aligment: String,
             name: String,
             race: String
-    },*/
+    },
     data () {
         return {
-            dialog: false,
-            languages: [],
-            vulnerabilities: [],
-            resistances: [],
-            immunities: [],
-            aligment: "chaotic evil",
-            name: "Boblin",
-            race: "Goblin"
+            dialog: false
         }
     }
 }
