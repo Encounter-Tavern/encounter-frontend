@@ -101,17 +101,7 @@
 
 
 <script>
-import {
-  mdiSword,
-  mdiShield,
-  mdiHeart,
-  mdiArmFlex,
-  mdiBrain,
-  mdiHandHeart,
-  mdiScript,
-  mdiAccount,
-  mdiHandRight,
-} from "@mdi/js";
+import { mdiSword, mdiShield, mdiHeart, mdiArmFlex, mdiBrain,mdiHandHeart,mdiScript,mdiAccount,mdiHandRight } from "@mdi/js";
 
 export default {
   name: "MonsterStatsPopup",
@@ -168,14 +158,14 @@ export default {
     emitChanges() {
       this.dialog = false;
       this.$emit("statChanges", {
-        hitPoints: this.hitPoints,
-        armorClass: this.armorClass,
-        strength: this.strength,
-        dexterity: this.dexterity,
-        constitution: this.constitution,
-        intelligence: this.intelligence,
-        wisdom: this.wisdom,
-        charisma: this.wisdom,
+        hitPoints: parseInt(this.hitPoints),
+        armorClass: parseInt(this.armorClass),
+        strength: parseInt(this.strength),
+        dexterity: parseInt(this.dexterity),
+        constitution: parseInt(this.constitution),
+        intelligence: parseInt(this.intelligence),
+        wisdom: parseInt(this.wisdom),
+        charisma: parseInt(this.wisdom)
       });
     },
   },
