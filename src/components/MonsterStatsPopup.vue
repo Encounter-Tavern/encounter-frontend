@@ -12,7 +12,7 @@
             <v-text-field
               :prepend-icon="icons.heart"
               label="Hit Points"
-              v-model="hitPoints"
+              v-model="currentHitPoints"
               type="number"
             />
           </v-col>
@@ -22,7 +22,7 @@
             <v-text-field
               :prepend-icon="icons.shield"
               label="Armor Class"
-              v-model="armorClass"
+              v-model="armor_class"
               type="number"
             />
           </v-col>
@@ -106,11 +106,11 @@ import { mdiSword, mdiShield, mdiHeart, mdiArmFlex, mdiBrain,mdiHandHeart,mdiScr
 export default {
   name: "MonsterStatsPopup",
   props: {
-    hitPoints: {
+    currentHitPoints: {
       type: Number,
       required: true,
     },
-    armorClass: {
+    armor_class: {
       type: Number,
       required: true,
     },
@@ -159,8 +159,8 @@ export default {
     emitChanges() {
       this.dialog = false;
       this.$emit("statChanges", {
-        hitPoints: parseInt(this.hitPoints),
-        armorClass: parseInt(this.armorClass),
+        currentHitPoints: parseInt(this.currentHitPoints),
+        armor_class: parseInt(this.armor_class),
         strength: parseInt(this.strength),
         dexterity: parseInt(this.dexterity),
         constitution: parseInt(this.constitution),

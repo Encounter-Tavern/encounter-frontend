@@ -20,7 +20,7 @@
             <div>
               <v-icon large color="blue">{{this.icons.shield}}</v-icon>
             </div>
-            <div>{{this.monster.armorClass}}</div>
+            <div>{{this.monster.armor_class}}</div>
           </v-col>
           <v-col>
             <div>
@@ -34,7 +34,7 @@
             <div>
               <v-icon large color="red">{{this.icons.heart}}</v-icon>
             </div>
-            <div>{{this.monster.hitPoints}}</div>
+            <div>{{this.monster.currentHitPoints}}</div>
           </v-col>
         </v-row>
         <v-row>
@@ -77,8 +77,8 @@
           </v-col>
           <v-col>
             <MonsterStatsPopup @statChanges="updateStats($event)"
-              :hitPoints="monster.hitPoints"
-              :armorClass="monster.armorClass"
+              :currentHitPoints="monster.currentHitPoints"
+              :armor_class="monster.armor_class"
               :strength="monster.strength"
               :dexterity="monster.dexterity"
               :constitution="monster.constitution"
@@ -137,8 +137,8 @@ export default {
   },
   methods: {
     updateStats(input) {
-      this.monster.hitPoints = input.hitPoints;
-      this.monster.armorClass = input.armorClass;
+      this.monster.currentHitPoints = input.currentHitPoints;
+      this.monster.armor_class = input.armor_class;
       this.monster.strength = input.strength;
       this.monster.dexterity = input.dexterity;
       this.monster.constitution = input.constitution;
