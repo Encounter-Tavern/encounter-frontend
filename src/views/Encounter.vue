@@ -1,27 +1,38 @@
 <template>
-    <div class="encounter pa-3">
-        <v-container>
-            <v-layout row wrap justify-space-around>
-                <v-flex xs12 sm6 md6 lg4 xl3>
-                    <MonsterCard/>
-                </v-flex>
-            </v-layout>
-        </v-container>
-    </div>
+  <div class="encounter pa-3">
+    <v-container>
+      <v-layout row wrap justify-space-around>
+        <v-flex xs12 sm6 md6 lg4 xl3 class="mb-10">
+          <MonsterCard />
+        </v-flex>
+        <v-flex xs12 sm6 md6 lg4 xl3 class="mb-10">
+          <MonsterCard />
+        </v-flex>
+        <v-flex xs12 sm6 md6 lg4 xl3 class="mb-10">
+          <MonsterCard />
+        </v-flex>
+        <v-flex xs12 sm6 md6 lg4 xl3 class="mb-10">
+          <MonsterCard />
+        </v-flex>
+        <v-flex xs12 sm6 md6 lg4 xl3 class="mb-10">
+          <MonsterCard />
+        </v-flex>
+      </v-layout>
+    </v-container>
+  </div>
 </template>
 
 <script>
-import MonsterCard from '../components/MonsterCard';
+import MonsterCard from "../components/MonsterCard";
 
 export default {
-    name: 'Encounter',
-    components: {
-        MonsterCard
-    }
-}
+  name: "Encounter",
+  components: {
+    MonsterCard,
+  },
+};
 </script>
 
 
 <style scoped>
-
 </style>

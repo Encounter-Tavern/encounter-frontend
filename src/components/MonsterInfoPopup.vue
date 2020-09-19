@@ -80,7 +80,10 @@ export default {
             languages: [],
             vulnerabilities: [],
             resistances: [],
-            immunities: []
+            immunities: [],
+            aligment: String,
+            name: String,
+            race: String
     },*/
     data () {
         return {
