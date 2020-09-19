@@ -1,4 +1,5 @@
-# encounter-frontend
+# Encounter-Tavern Frontend
+The frontend for Encounter-Tavern
 
 ## Project setup
 ```
