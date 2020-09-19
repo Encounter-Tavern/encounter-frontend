@@ -2,28 +2,38 @@
   <div class="encounterGenerator">
         <v-container>
             <v-row>
-                <h1>Generator</h1>
+                <v-col>
+                    <h1>Generator</h1>
+                </v-col>
             </v-row>
             <v-row>
-                <v-radio-group v-model="difficulty" label="Difficulty" :mandatory="true" :row='true'>
-                    <v-radio label="Easy" value="EASY"></v-radio>
-                    <v-radio label="Normal" value="NORMAL"></v-radio>
-                    <v-radio label="Hard" value="HARD"></v-radio>
-                    <v-radio label="Total Party Kill" value="TPK"></v-radio>
-                </v-radio-group>
+                <v-col>
+                    <v-radio-group v-model="difficulty" label="Difficulty" :mandatory="true" :row='true'>
+                        <v-radio label="Easy" value="EASY"></v-radio>
+                        <v-radio label="Normal" value="NORMAL"></v-radio>
+                        <v-radio label="Hard" value="HARD"></v-radio>
+                        <v-radio label="Total Party Kill" value="TPK"></v-radio>
+                    </v-radio-group>
+                </v-col>
             </v-row>
             <v-row>
-                <PlayerPopup @addPlayer="addPlayerToList($event.name, $event.level)"/>
+                <v-col>
+                    <PlayerPopup @addPlayer="addPlayerToList($event.name, $event.level)"/>
+                </v-col>
             </v-row>
             <v-row>
-                <v-chip-group v-for="(player, index) in players" :key="player.name">
-                    <v-chip close @click:close="removePlayerFromList(index)" color="blue">
-                        {{player.name}} Level: {{player.level}}
-                    </v-chip>
-                </v-chip-group>
+                <v-col>
+                    <v-chip-group v-for="(player, index) in players" :key="player.name">
+                        <v-chip close @click:close="removePlayerFromList(index)" color="blue">
+                            {{player.name}} Level: {{player.level}}
+                        </v-chip>
+                    </v-chip-group>
+                </v-col>
             </v-row>
             <v-row>
-                <v-btn @click="createEncounter()" color="success">Generate</v-btn>
+                <v-col>
+                    <v-btn @click="createEncounter()" color="success">Generate</v-btn>
+                </v-col>
             </v-row>
         </v-container>
   </div>

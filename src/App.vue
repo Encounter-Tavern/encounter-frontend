@@ -1,6 +1,9 @@
 <template>
   <div id="app">
     <v-app>
+      <v-app-bar max-height="7%">
+        <v-toolbar-title>Encounter-Tavern</v-toolbar-title>
+      </v-app-bar>
       <router-view/>
       <v-footer app>
         <span>&copy; {{ new Date().getFullYear() }}</span>
