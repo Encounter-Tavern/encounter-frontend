@@ -9,11 +9,11 @@
                     <v-radio label="Easy" value="EASY"></v-radio>
                     <v-radio label="Normal" value="NORMAL"></v-radio>
                     <v-radio label="Hard" value="HARD"></v-radio>
-                    <v-radio label="Total party wipe" value="TPK"></v-radio>
+                    <v-radio label="Total Party Kill" value="TPK"></v-radio>
                 </v-radio-group>
             </v-row>
             <v-row>
-                    <PlayerPopup/>
+                <PlayerPopup @addPlayer="addPlayerToList($event.name, $event.level)"/>
             </v-row>
             <v-row>
                 <v-col v-for="player in players" :key="player.name">
@@ -21,7 +21,7 @@
                 </v-col>
             </v-row>
             <v-row>
-                <v-btn>Generate</v-btn>
+                <v-btn color="success">Generate</v-btn>
             </v-row>
         </v-container>
   </div>
@@ -40,16 +40,17 @@ export default {
   data() {
       return {
           difficulty: '',
-          players: [
-              {
-                  "name": "test",
-                  "level": 1
-              },
-                            {
-                  "name": "daddy",
-                  "level": 2
-              }
-          ]
+          players: []
+      }
+  },
+  methods: {
+      addPlayerToList(name, level){
+        console.log("addToList");
+        console.log(name);
+        this.players.push({
+            "name": name,
+            "level": level
+        });
       }
   }
 }

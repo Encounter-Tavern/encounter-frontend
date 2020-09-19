@@ -14,15 +14,15 @@
 
             <div class="cardForm">
                 <v-form>
-                    <v-text-field label="Player Name" :clearable="true" placeholder="Zork the Ork"/>
-                    <v-slider label="Level" :min="0" :max="20" hint="20"/>
+                    <v-text-field v-model="name" label="Player Name" :clearable="true" hint="Enter the name of this player" placeholder="Zork the Ork"/>
+                    <v-slider v-model="level" label="Level" :min="1" :max="20" hint="Enter the level of this player"/>
                 </v-form>
             </div>
             <v-divider></v-divider>
 
             <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn color="primary" text @click="dialog = false">
+            <v-btn color="primary" text @click="addPlayer()">
                 Add Player
             </v-btn>
             </v-card-actions>
@@ -37,8 +37,22 @@ export default {
     name: 'PlayerPopup',
     data () {
       return {
-        dialog: false,
+        dialog: false
       }
+    },
+    props: {
+        name: String,
+        level: Number
+    },
+    methods: {
+        addPlayer(){
+            this.dialog = false;
+            console.log("addPlayer");
+            this.$emit('addPlayer', {
+                "name": this.name,
+                "level": this.level
+            });
+        }
     }
 }
 </script>
