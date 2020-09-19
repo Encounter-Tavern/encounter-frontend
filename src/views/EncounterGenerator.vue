@@ -55,7 +55,11 @@ export default {
         this.players.splice(index, 1);
       },
       createEncounter(){
-        console.log("TODO");
+        this.$http.post("https://api.coindesk.com/v1/bpi/currentprice.json", {
+            
+        }).
+        then(response => (console.log(response)));
+        //TODO
       }
   }
 }

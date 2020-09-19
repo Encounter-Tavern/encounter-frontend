@@ -6,7 +6,7 @@
             </v-btn>
         </template>
 
-        <v-card class="text-left">
+        <v-card>
             <v-card-title>Change Stats</v-card-title>
             <v-container>
                 <v-row>

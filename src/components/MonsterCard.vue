@@ -16,9 +16,7 @@
                 </v-col>
                 <v-col>
                     <div><v-icon x-large color="green">{{this.icons.sword}}</v-icon></div>
-                    <v-btn text depressed>
-                        <div>Attack</div>
-                    </v-btn>
+                    <MonsterActionsPopup/>
                 </v-col>
                 <v-col>
                     <div><v-icon large color="red">{{this.icons.heart}}</v-icon></div>
@@ -69,12 +67,14 @@
 import { mdiHome, mdiSword, mdiShield, mdiHeart, mdiArmFlex, mdiBrain, mdiHandHeart, mdiScript, mdiAccount, mdiHandRight } from '@mdi/js';
 import MonsterInfoPopup from '../components/MonsterInfoPopup';
 import MonsterStatsPopup from '../components/MonsterStatsPopup';
+import MonsterActionsPopup from '../components/MonsterActionsPopup';
 
 export default {
     name: 'MonsterCard',
     components: {
         MonsterInfoPopup,
-        MonsterStatsPopup
+        MonsterStatsPopup,
+        MonsterActionsPopup
     },
     data() {
         return {
