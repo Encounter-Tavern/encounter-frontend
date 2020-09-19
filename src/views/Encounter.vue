@@ -1,7 +1,7 @@
 <template>
   <div class="encounter pa-3">
     <v-layout row wrap>
-      <v-flex xs12 sm7 md8 xl10>
+      <v-flex xs12 sm8 md9 xl10>
         <div>
           <v-layout row wrap justify-space-around>
             <v-flex
@@ -9,18 +9,23 @@
               :key="monster.id"
               xs12
               sm12
-              md12
+              md6
               lg4
               xl3
-              :class="justify-space-around"
+              class="mb-10 d-flex justify-space-around"
             >
               <MonsterCard :monster="monster" />
             </v-flex>
           </v-layout>
         </div>
       </v-flex>
-      <v-flex xs12 sm5 md4 xl2>
-        <h1>Test</h1>
+      <v-flex xs12 sm4 md3 xl2>
+        <h1>Initiative</h1>
+        <v-list runded>
+          <v-list-item>
+            <v-list-item-content>Test</v-list-item-content>
+          </v-list-item>
+        </v-list>
       </v-flex>
     </v-layout>
   </div>
