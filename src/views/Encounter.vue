@@ -1,12 +1,18 @@
 <template>
-    <div class="encounter">
+    <div class="encounter pa-3">
             {{$route.params.id}}
+            <MonsterCard/>
     </div>
 </template>
 
 <script>
+import MonsterCard from '../components/MonsterCard';
+
 export default {
-    name: 'Encounter'    
+    name: 'Encounter',
+    components: {
+        MonsterCard
+    }
 }
 </script>
 
