@@ -46,13 +46,17 @@
       </v-main>
       <v-footer app>
         <span>&copy; {{ new Date().getFullYear() }}</span>
+        <v-spacer />
+        <v-btn href="https://github.com/Encounter-Tavern" target="_blank" text>
+          <span class="mr-2">Take a look at our GitHub</span>
+          <v-icon>mdi-github</v-icon>
+        </v-btn>
       </v-footer>
     </v-app>
   </div>
 </template>
 
 <script>
-
 export default {
   data() {
     return {
